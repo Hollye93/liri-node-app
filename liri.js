@@ -29,11 +29,10 @@ var getMeSpotify = function(songName) {
     songName = 'What\'s my age again';
   };
 
-  spotify.search({ type: 'track', query: songName }, function(err, data) {
-    if (err) {
-      console.log('Error occurred: ' + err);
-      return;
-    }
+ spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
+  }
 
     var songs = data.tracks.items;
     var data = []; //empty array to hold data
@@ -53,9 +52,9 @@ var getMeSpotify = function(songName) {
 
 
 var getTweets = function() {
-  var client = new twitter(dataKeys.twitterKeys);
+  var client = new twitter(dataKeys.twitter);
 
-  var params = { screen_name: 'hamilton_hollye', count: 10 };
+  var params = { screen_name: '@hamilton_hollye', count: 10 };
 
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
