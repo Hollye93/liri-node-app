@@ -55,7 +55,7 @@ var getMeSpotify = function(songName) {
 var getTweets = function() {
   var client = new twitter(dataKeys.twitterKeys);
 
-  var params = { screen_name: 'ednas', count: 10 };
+  var params = { screen_name: 'hamilton_hollye', count: 10 };
 
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
